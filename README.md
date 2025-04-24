@@ -51,32 +51,6 @@ This is a full-featured authentication system using **Next.js App Router** and *
    npm run dev
    ```
 
----
-
-## 📁 Folder Structure
-
-```
-src/
-├── app/
-│   ├── api/
-│   │   └── auth/
-│   │       ├── login/route.js
-│   │       ├── signup/route.js
-│   │       └── logout/route.js
-│   ├── login/
-│   │   └── page.js
-│   ├── signup/
-│   │   └── page.js
-│   ├── layout.js
-│   └── page.js
-│
-├── models/
-│   └── User.js
-├── lib/
-│   ├── db.js
-│   └── auth.js
-└── middleware.js
-```
 
 ---
 

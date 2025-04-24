@@ -26,7 +26,9 @@ export async function POST(req) {
   console.log("token is", token)
 
   const cookie = await cookies()
-  cookie.set("token", token)
+  cookie.set("token", token, {
+    httpOnly: true
+  })
 
   return NextResponse.json({success: true, message: "user created"})
 }

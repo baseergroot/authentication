@@ -8,7 +8,7 @@ export async function middleware(request) {
   const pathname = request.nextUrl.pathname
 
   const authRoutes = ['/login', '/signup']
-  const protectedRoutes = ['/']
+  const protectedRoutes = ['/', "/logout", "/user"]
 
   let loggedIn = false
 
@@ -29,12 +29,12 @@ export async function middleware(request) {
   }
 
   if (authRoutes.includes(pathname) && loggedIn) {
-    return NextResponse.redirect(new URL('/', request.url))
+    return NextResponse.redirect(new URL('/user', request.url))
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/', '/login', '/signup'],
+  matcher: ['/', '/login', '/signup', "/logout", "/user"]
 }

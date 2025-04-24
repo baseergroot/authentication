@@ -2,8 +2,11 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
+
 
 function Signup() {
+  const router = useRouter()
   const handleSubmit = (e) => {
     const formData = {
       name: e.get("name"),
@@ -14,7 +17,9 @@ function Signup() {
     console.log("Sign Up Data:", formData);
 
     axios.post("/api/auth/signup", formData)
-    .then((response) => {console.log("res from  route", response)})
+    .then((response) => {console.log("res from  route", response)
+      router.push("/user")
+    })
   };
 
   return (
